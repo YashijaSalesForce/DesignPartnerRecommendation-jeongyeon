@@ -1,0 +1,82 @@
+<template>
+  <lightning-card title="디자인 파트너사 추천" icon-name="standard:partner">
+    <!-- Opportunity 정보 표시 -->
+    <div class="slds-p-around_medium">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+          <p><strong>프로젝트:</strong> {opportunityName}</p>
+          <p><strong>고객사:</strong> {accountName}</p>
+          <template if:true={projectType}>
+            <p><strong>프로젝트 유형:</strong> {projectType}</p>
+          </template>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+          <p><strong>현재 단계:</strong> {stageName}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 방문견적 단계일 때만 표시 -->
+    <template if:true={isVisitEstimateStage}>
+      <div class="slds-p-around_medium">
+        <lightning-button
+          variant="brand"
+          label="디자인 파트너사 추천 받기"
+          onclick={handleGetRecommendation}
+          disabled={isLoading}
+        >
+        </lightning-button>
+      </div>
+
+      <!-- 로딩 스피너 -->
+      <template if:true={isLoading}>
+        <div class="slds-p-around_medium slds-text-align_center">
+          <lightning-spinner
+            alternative-text="추천 생성 중..."
+            size="medium"
+          ></lightning-spinner>
+          <p class="slds-m-top_small">
+            AI가 최적의 파트너사를 분석하고 있습니다...
+          </p>
+        </div>
+      </template>
+
+      <!-- 추천 결과 표시 -->
+      <template if:true={showRecommendation}>
+        <div class="slds-p-around_medium">
+          <div class="slds-box slds-theme_default">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+              🤖 AI 추천 결과
+            </h3>
+            <div class="recommendation-content">
+              <lightning-formatted-text
+                value={recommendation}
+              ></lightning-formatted-text>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- 오류 메시지 -->
+      <template if:true={error}>
+        <div class="slds-p-around_medium">
+          <div class="slds-box slds-theme_error">
+            <p>오류: {error}</p>
+          </div>
+        </div>
+      </template>
+    </template>
+
+    <!-- 방문견적 단계가 아닐 때 -->
+    <template if:false={isVisitEstimateStage}>
+      <div class="slds-p-around_medium">
+        <div class="slds-box slds-theme_info">
+          <p>
+            디자인 파트너사 추천은 '네고&최종협상' 단계에서 이용할 수 있습니다.
+          </p>
+          <p>현재 단계: <strong>{stageName}</strong></p>
+        </div>
+      </div>
+    </template>
+  </lightning-card>
+</template>

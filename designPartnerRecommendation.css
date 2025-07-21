@@ -1,0 +1,18 @@
+.recommendation-content {
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+.slds-box {
+  border-radius: 8px;
+}
+
+.slds-theme_info {
+  background-color: #e3f2fd;
+  border-left: 4px solid #1976d2;
+}
+
+.slds-theme_error {
+  background-color: #ffebee;
+  border-left: 4px solid #d32f2f;
+}
