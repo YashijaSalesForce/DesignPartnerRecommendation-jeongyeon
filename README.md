@@ -7,7 +7,8 @@ Salesforce의 Opportunity(기회) 레코드 기반으로
 ---
 <img width="500" height="700" alt="image" src="https://github.com/user-attachments/assets/346848a8-a386-4e2e-8339-32827c2e15ca" />
 ---
-## 주요 기능 (Features)
+<br>
+##주요 기능 (Features)
 
 - **AI 기반 디자인 파트너 추천**  
   - Opportunity 정보와 연계, Apex에서 AI 결과 또는 백업 로직 기반 추천
