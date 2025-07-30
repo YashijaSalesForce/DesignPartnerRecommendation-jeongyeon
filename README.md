@@ -5,6 +5,11 @@ Salesforce의 Opportunity(기회) 레코드 기반으로
 **데이터와 매칭 로직을 활용해 최적의 디자인 파트너사를 추천**해주는 LWC(Lightning Web Component)입니다.
 
 ---
+
+
+https://github.com/user-attachments/assets/55691324-4a27-48f9-a801-8caedbf870b2
+
+
 <img width="500" height="700" alt="image" src="https://github.com/user-attachments/assets/346848a8-a386-4e2e-8339-32827c2e15ca" />
 ---
 <br>
