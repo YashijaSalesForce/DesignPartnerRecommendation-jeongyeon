@@ -324,39 +324,6 @@ sf org assign permset --name Partner_Recommendation_User
 sf data import --plan ./data/sample-partners.json
 ```
 
-### Opportunity 페이지 레이아웃 추가
-
-1. Setup → Object Manager → Opportunity
-2. Lightning Record Pages → Edit
-3. Components에서 `designPartnerRecommendation` 검색
-4. 페이지에 드래그 앤 드롭
-5. Save & Activate
-
----
-
-## ⚙️ 환경 설정
-
-### Custom Metadata 설정
-
-```xml
-<!-- Matching_Criteria__mdt -->
-<CustomMetadata>
-    <label>Default Weights</label>
-    <values>
-        <field>Specialization_Weight__c</field>
-        <value>30</value>
-    </values>
-    <values>
-        <field>Rating_Weight__c</field>
-        <value>25</value>
-    </values>
-    <values>
-        <field>Experience_Weight__c</field>
-        <value>20</value>
-    </values>
-</CustomMetadata>
-```
-
 ---
 
 ## 📈 기대 효과
@@ -398,9 +365,9 @@ WHERE PermissionSet.Name = 'Partner_Recommendation_User'
 
 ## 🙏 감사의 말
 
-- Salesforce Developer Community
+- Salesforce HELP
 - Salesforce 청년 CRM 101 과정
-- Beta Testers
+
 
 ---
 
