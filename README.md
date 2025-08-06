@@ -13,7 +13,93 @@
 
 ---
 
-## 🎯 프반 | Review Object |
+## 🎯 프로젝트 개요
+
+**경험과 인맥에 의존하던 파트너 선정**을 **객관적 데이터 기반 추천**으로 혁신합니다.  
+Salesforce Opportunity 레코드의 정보를 실시간으로 분석하여 프로젝트에 최적화된 시공업체를 추천합니다.
+
+### 💡 핵심 가치
+
+<div align="center">
+
+| 기존 방식 | → | 새로운 방식 |
+|:---:|:---:|:---:|
+| 🤔 주관적 판단 | → | 📊 데이터 기반 의사결정 |
+| ⏰ 1-2일 소요 | → | ⚡ 10분 내 완료 |
+| 🎲 불확실한 결과 | → | 🎯 예측 가능한 매칭 |
+
+</div>
+
+---
+
+## 🎥 시연 영상
+
+<div align="center">
+
+https://github.com/user-attachments/assets/55691324-4a27-48f9-a801-8caedbf870b2
+
+<img width="600" alt="Partner Recommendation Interface" src="https://github.com/user-attachments/assets/346848a8-a386-4e2e-8339-32827c2e15ca" />
+
+</div>
+
+---
+
+## ✨ 주요 기능
+
+### 📊 **데이터 기반 지능형 추천**
+
+<table>
+<tr>
+<th width="50%">핵심 기능</th>
+<th width="50%">기술 구현</th>
+</tr>
+<tr>
+<td>
+
+**🎯 다차원 매칭 분석**
+- 프로젝트 유형별 전문성 매칭
+- 디자인 스타일 선호도 분석
+- 예산 범위 적합성 평가
+- 지역 및 가용성 고려
+
+**📊 실시간 데이터 연동**
+- Opportunity 정보 자동 연계
+- 파트너 포트폴리오 실시간 업데이트
+- 과거 프로젝트 성과 반영
+- 고객 평가 즉시 반영
+
+</td>
+<td>
+
+**⚙️ 기술 스택**
+```javascript
+// 매칭 알고리즘 구조
+const matchingEngine = {
+  primaryFactors: {
+    specialization: 30,  // 전문 분야
+    rating: 25,         // 고객 평점
+    experience: 20      // 프로젝트 경험
+  },
+  secondaryFactors: {
+    availability: 10    // 가용성
+  }
+};
+```
+
+</td>
+</tr>
+</table>
+
+### 📈 **상세 매칭 로직**
+
+#### 평가 기준 상세
+
+<div align="center">
+
+| 평가 항목 | 가중치 | 세부 기준 | 데이터 소스 |
+|:---:|:---:|:---:|:---:|
+| **전문 분야** | 30% | 프로젝트 타입 일치도 | Partner Profile |
+| **고객 평점** | 25% | 고객설문조사사 | Review Object |
 | **프로젝트 경험** | 20% | 유사 프로젝트 수행 이력 | Project History |
 | **가용성** | 10% | 현재 진행 프로젝트 수 | Resource Calendar |
 
@@ -248,6 +334,31 @@ sf data import --plan ./data/sample-partners.json
 
 ---
 
+## ⚙️ 환경 설정
+
+### Custom Metadata 설정
+
+```xml
+<!-- Matching_Criteria__mdt -->
+<CustomMetadata>
+    <label>Default Weights</label>
+    <values>
+        <field>Specialization_Weight__c</field>
+        <value>30</value>
+    </values>
+    <values>
+        <field>Rating_Weight__c</field>
+        <value>25</value>
+    </values>
+    <values>
+        <field>Experience_Weight__c</field>
+        <value>20</value>
+    </values>
+</CustomMetadata>
+```
+
+---
+
 ## 📈 기대 효과
 
 <div align="center">
@@ -287,9 +398,10 @@ WHERE PermissionSet.Name = 'Partner_Recommendation_User'
 
 ## 🙏 감사의 말
 
-- Salesforce HELP
+- Salesforce Developer Community
 - Salesforce 청년 CRM 101 과정
--
+- Beta Testers
+
 ---
 
 <div align="center">
